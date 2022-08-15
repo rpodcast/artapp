@@ -1,0 +1,32 @@
+Package: artapp
+Title: MET Art Museum Shiny App
+Version: 0.0.0.9000
+Authors@R: 
+    person("Eric", "Nantz", , "theRcast@gmail.com", role = c("cre", "aut"))
+Description: MET Art Museum Shiny App.
+License: MIT + file LICENSE
+URL: https://github.com/rpodcast/artapp
+BugReports: https://github.com/rpodcast/artapp/issues
+Imports: 
+    attachment,
+    config,
+    covrpage,
+    devtools,
+    golem (>= 0.3.3),
+    httpuv,
+    rhub,
+    rstudioapi,
+    shiny (>= 1.7.2),
+    shinytest2,
+    shinyuieditor (>= 0.1.0),
+    usethis
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-US
+LazyData: true
+RoxygenNote: 7.2.1
+Remotes:  
+    rstudio/shinyuieditor

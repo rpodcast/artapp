@@ -51,6 +51,11 @@ RUN echo "RENV_PATHS_CACHE=/renv/cache" >> /usr/local/lib/R/etc/Renviron
 # [Optional] Uncomment this section to add Quarto to the container
 RUN /rocker_scripts/install_quarto.sh
 
+# install chrome for shinytest2
+RUN curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/chrome.deb
+RUN apt-get update -qq \
+    && apt-get -y install ./tmp/chrome.deb
+
 # [Optional] Uncomment this section to add Hugo to the container
 # Customize version number as appropriate
 #RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.87.0/hugo_extended_0.87.0_Linux-64bit.deb -o /tmp/hugo.deb

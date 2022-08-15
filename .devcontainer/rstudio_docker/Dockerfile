@@ -40,6 +40,11 @@ RUN echo "RENV_PATHS_CACHE=/renv/cache" >> /usr/local/lib/R/etc/Renviron
 # [Optional] Uncomment this section to install additional R packages.
 RUN install2.r --error --skipinstalled --ncpus -1 renv remotes
 
+# install chrome for shinytest2
+RUN curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/chrome.deb
+RUN apt-get update -qq \
+    && apt-get -y install ./tmp/chrome.deb
+
 EXPOSE 8787
 
 CMD ["/init"]
